@@ -41,9 +41,7 @@ Destino: https://antauri7.github.io/bautizo-dulce-abigail/
 
 La ruta base de Vite ya está configurada. El workflow `.github/workflows/deploy.yml` instala con `npm ci`, ejecuta pruebas y compilación, sube `dist/` y publica con OIDC. No requiere tokens personales.
 
-1. En GitHub abrir **Settings → Pages → Build and deployment → Source → GitHub Actions**. La URL ya responde con la página inicial Jekyll; esto no confirma que la fuente esté configurada para Actions. La API de Pages sin autenticación respondió 404, por lo que no se pudo consultar esa configuración administrativa.
-La publicación remota no se realizó: `git push --dry-run origin main` confirmó que Git local no tiene autenticación HTTPS configurada. Los cambios están en esta copia de trabajo y la versión compilada en `dist/`.
-
+1. En **Settings → Pages → Build and deployment → Source**, el repositorio usa **GitHub Actions**.
 2. Subir los archivos a la rama `main` del repositorio existente (o revisar y fusionar una rama).
 3. Revisar **Actions → Publicar invitación en GitHub Pages**. Se puede iniciar manualmente con workflow_dispatch.
 4. Esperar a que ambos jobs terminen y abrir la URL. Revisar imágenes, audio y tarjeta social desde un dispositivo real.
