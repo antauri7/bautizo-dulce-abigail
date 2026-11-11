@@ -1,0 +1,2 @@
+[functions.memories]
+verify_jwt = false

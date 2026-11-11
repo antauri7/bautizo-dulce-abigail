@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {remaining,whatsappMessage,calendar} from '../src/lib/event.mjs';
+test('fecha de México equivale a las 18 UTC y no genera negativos',()=>{const target='2026-12-26T12:00:00-06:00';assert.equal(Date.parse(target),Date.parse('2026-12-26T18:00:00Z'));assert.deepEqual(remaining(target,Date.parse('2026-12-25T16:58:57Z')),[1,1,1,3]);assert.deepEqual(remaining(target,Date.parse('2027-01-01T00:00:00Z')),[0,0,0,0]);});
+test('WhatsApp conserva acentos y valida datos',()=>{const m=whatsappMessage(' María & José ',3);const u=new URL('https://wa.me/527721390093?text='+encodeURIComponent(m));assert.equal(u.searchParams.get('text'),m);assert.match(m,/María & José/);assert.throws(()=>whatsappMessage(' ',1));for(const n of [0,-1,1.5,31,NaN])assert.throws(()=>whatsappMessage('Ana',n));});
+test('calendario válido, UTC y sin duración inventada',()=>{const ics=calendar();assert.match(ics,/DTSTART:20261226T180000Z/);assert.doesNotMatch(ics,/DTEND|DURATION/);assert.ok(ics.endsWith('END:VCALENDAR\r\n'));for(const line of ics.split('\r\n'))assert.ok(Buffer.byteLength(line)<=75);});
