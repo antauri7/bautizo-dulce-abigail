@@ -7,7 +7,7 @@ export function whatsappMessage(name, count) {
  return `Hola, con mucho gusto confirmo mi asistencia al bautizo de Dulce Abigail Flores Martínez, el sábado 26 de diciembre de 2026.\n\nMi nombre es ${name.trim()} y asistiremos ${count} personas.\n\n¡Muchas gracias por la invitación!`;
 }
 export function calendar() {
- return ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Familia Flores Martinez//Bautizo//ES','CALSCALE:GREGORIAN','BEGIN:VEVENT','UID:bautizo-dulce-abigail-20261226@antauri7.github.io','DTSTAMP:20261110T000000Z','DTSTART:20261226T180000Z','SUMMARY:Bautizo de Dulce Abigail Flores Martínez','LOCATION:Iglesia del Divino Salvador\\, Av. 16 de Enero 1869\\, Centro\\, San Salvador\\, Hidalgo','DESCRIPTION:Ceremonia religiosa a las 12:00 p. m. (America/Mexico_City).','END:VEVENT','END:VCALENDAR',''].map(line => {
+ return ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Familia Flores Martinez//Bautizo//ES','CALSCALE:GREGORIAN','BEGIN:VEVENT','UID:bautizo-dulce-abigail-20261226@antauri7.github.io','DTSTAMP:20261110T000000Z','DTSTART:20261226T163000Z','SUMMARY:Bautizo de Dulce Abigail Flores Martínez','LOCATION:Iglesia del Divino Salvador\\, Av. 16 de Enero 1869\\, Centro\\, San Salvador\\, Hidalgo','DESCRIPTION:Bautizo 10:30 a. m. y santa misa 11:00 a. m. (America/Mexico_City). Comida 2:00 p. m. en Calle Camino Viejo S/N.','END:VEVENT','END:VCALENDAR',''].map(line => {
  const parts=[];let part='';let bytes=0;
  for(const c of line){const n=new TextEncoder().encode(c).length;if(bytes+n>73){parts.push(part);part=' ';bytes=1;}part+=c;bytes+=n;}parts.push(part);return parts.join('\r\n');
  }).join('\r\n');

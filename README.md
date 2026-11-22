@@ -33,7 +33,7 @@ La música solo comienza tras abrir la invitación; volumen 32 %, bucle y contro
 
 ## Fecha y calendario
 
-La cuenta regresiva usa `2026-12-26T12:00:00-06:00`, equivalente a `2026-12-26T18:00:00Z`. Ese día se muestra la celebración y posteriormente un agradecimiento; nunca valores negativos. El archivo ICS usa UTC, equivalente al mediodía de America/Mexico_City. No incluye DTEND ni DURATION: RFC 5545 permite eventos de fecha/hora sin estos campos, por lo que no se inventa una conclusión. El calendario del invitado podría aplicar su duración visual predeterminada.
+La cuenta regresiva usa `2026-12-26T10:30:00-06:00`, equivalente a `2026-12-26T16:30:00Z`. Ese día se muestra la celebración y posteriormente un agradecimiento; nunca valores negativos. El archivo ICS usa UTC, equivalente a las 10:30 a. m. de America/Mexico_City. No incluye DTEND ni DURATION: RFC 5545 permite eventos de fecha/hora sin estos campos, por lo que no se inventa una conclusión. El calendario del invitado podría aplicar su duración visual predeterminada.
 
 ## GitHub Pages
 

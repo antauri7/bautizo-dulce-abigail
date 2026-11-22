@@ -6,3 +6,5 @@
 @media(max-width:600px){.intro-copy h1{font-size:70px;line-height:.92}.intro-copy h1 br{display:block}.intro-copy h1 em{margin-left:20px}.intro-art{flex-shrink:0;width:calc(100% - 30px)}}
 @media(max-width:600px){.hero h1{font-size:clamp(80px,25vw,98px)}.hero h1 em{margin-left:25px}}
 .hero{overflow:clip}
+
+.timeline li:not(:last-child):after{content:"";position:absolute;left:10px;top:35px;bottom:10px;width:1px;background:#cfc1ad}
